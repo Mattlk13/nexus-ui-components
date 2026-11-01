@@ -2,8 +2,15 @@
   "name": "nexus-ui-components",
   "version": "1.0.0",
   "description": "Production-ready React components combining Bootstrap concepts and Flat UI aesthetics",
-  "main": "index.js",
-  "keywords": ["react", "components", "ui", "bootstrap", "flat-ui", "nexus"],
+  "main": "./dist/index.cjs",
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "bootstrap",
+    "flat-ui",
+    "nexus"
+  ],
   "author": "Mattlk13",
   "license": "MIT",
   "repository": {
@@ -13,5 +20,36 @@
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "lucide-react": "^0.263.0"
+  },
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./index.js": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "licenses",
+    "INTEGRATION.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "lucide-react": "0.263.1",
+    "nexus-design-system": "https://codeload.github.com/Mattlk13/nexus-design-system/tar.gz/7cef47f83b765515d43cba657e725e2771e14611"
   }
 }

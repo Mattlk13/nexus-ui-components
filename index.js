@@ -12,7 +12,7 @@
 
 import React from 'react';
 import { X } from 'lucide-react';
-import { cn, cards, buttons, inputs, badges, borderRadius, effects } from './nexus-design-system';
+import { cn, cards, buttons, inputs, badges, borderRadius, effects } from 'nexus-design-system';
 
 /**
  * Product Card Component
